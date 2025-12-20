@@ -772,21 +772,6 @@ print(f"Модель сохранена: {MODELS_DIR / 'lama_config1.pkl'}")
     [21:20:16] - time: 1800.00 seconds
     [21:20:16] - CPU: 16 cores
     [21:20:16] - memory: 16 GB
-    
-    [21:20:16] [1mTrain data shape: (500000, 11)[0m
-    
-    [21:20:36] Layer [1m1[0m train process start. Time left 1779.56 secs
-    [21:20:44] Start fitting [1mLvl_0_Pipe_0_Mod_0_LinearL2[0m ...
-    [21:21:04] Fitting [1mLvl_0_Pipe_0_Mod_0_LinearL2[0m finished. score = [1m0.8737296264083111[0m
-    [21:21:04] [1mLvl_0_Pipe_0_Mod_0_LinearL2[0m fitting and predicting completed
-    [21:21:04] Time left 1752.18 secs
-    
-    [21:21:06] [1mSelector_LightGBM[0m fitting and predicting completed
-    [21:21:14] Start fitting [1mLvl_0_Pipe_1_Mod_0_LightGBM[0m ...
-    [21:21:24] Fitting [1mLvl_0_Pipe_1_Mod_0_LightGBM[0m finished. score = [1m0.8686815680853346[0m
-    [21:21:24] [1mLvl_0_Pipe_1_Mod_0_LightGBM[0m fitting and predicting completed
-    [21:21:24] Start hyperparameters optimization for [1mLvl_0_Pipe_1_Mod_1_Tuned_LightGBM[0m ... Time budget is 300.00 secs
-    
 
     Optimization Progress: 100%|██████████| 101/101 [03:56<00:00,  2.34s/it, best_trial=100, best_value=0.871]
     
@@ -2390,9 +2375,6 @@ print(f"Размер: {submission_custom.shape}")
 print(f"Диапазон предсказаний: [{test_pred_proba.min():.6f}, {test_pred_proba.max():.6f}]")
 print(f"Среднее предсказание: {test_pred_proba.mean():.6f}")
 
-del models_optuna, X_test_pool, X_test_proc
-import gc
-gc.collect()
 ```
 
     Загрузка модели для submission
@@ -2412,12 +2394,6 @@ gc.collect()
     Размер: (7669866, 2)
     Диапазон предсказаний: [0.000004, 0.969301]
     Среднее предсказание: 0.122738
-    
-
-
-
-
-    54099
 
 
 
@@ -2425,7 +2401,7 @@ gc.collect()
 
 Все разработанные модели были отправлены на платформу Kaggle для оценки на тестовой выборке. Ниже представлены результаты всех submission, они немного лучше чем результаты в ноутбуке, так как были попытки обучения на больших обьемах данных
 
-![kaggle](\src\other\kaggle.png)
+![kaggle](readme_files/kaggle.png)
 
 - Наилучший результат показал catboost с optuna `0.89518`
 - LightGBM c optuna `0.88089`
