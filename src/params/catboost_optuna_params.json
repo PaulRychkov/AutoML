@@ -1,0 +1,15 @@
+{
+  "best_params": {
+    "bootstrap_type": "Bayesian",
+    "learning_rate": 0.041241911785082436,
+    "iterations": 2466,
+    "depth": 7,
+    "l2_leaf_reg": 5.6226738906281675,
+    "random_strength": 0.09754085634637338,
+    "border_count": 109,
+    "min_data_in_leaf": 14,
+    "bagging_temperature": 0.5677398481727167
+  },
+  "best_auc": 0.8823798664961968,
+  "cv_auc": 0.8930874092719068
+}
